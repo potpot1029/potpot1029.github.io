@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>The Pot | Kruskal Reconstruction Tree</title>
+<link href='https://fonts.googleapis.com/css?family=JetBrains Mono' rel='stylesheet'>
+<script src="https://kit.fontawesome.com/ebca564330.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/theme.css">
+
+      <script src="/js/main.js"></script>
+
+<script src="http://localhost:1313/js/feather.min.js"></script>
+
+    <link rel="stylesheet" href="/scss/_admonition_variables.css">
+    <link rel="stylesheet" href="/scss/_admonition.css">
+
+
+  
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+  MathJax = {
+    tex: {
+      displayMath: [['\\[', '\\]'], ['$$', '$$']],  
+      inlineMath: [['\\(', '\\)']]                  
+    }
+  };
+</script>
+  
+</head>
+<body>
+  <header class="main-header">
+    <div class="overlay">
+  <div class="home">
+    <a href="http://localhost:1313/">The Pot</a>
+  </div>
+  
+  <nav>
+      <a href="/notes">Notes</a>
+      <a href="/cv.pdf">CV</a>
+  </nav>
+
+</div>
+
+  </header>
+  <main>
+    
+<main>
+  <article>
+    <div class="overlay">
+      <div class="title">
+        <h1 class="title">Kruskal Reconstruction Tree</h1>
+        <div class="meta">Posted on Oct 24, 2024 <span class="draft-label">DRAFT</span> </div>      </div>
+
+      <div class="notes-tags">
+        
+        
+        <nav class="nav tags">
+          <ul class="tags">
+            
+            <li><a href="/tags/algorithms">algorithms</a></li>
+            
+            <li><a href="/tags/graph-theory">graph theory</a></li>
+            
+          </ul>
+        </nav>
+        
+        
+      </div>
+      <hr class="overlay">
+  
+      
+  
+      <p>In the last ICPC training, I encountered <a href="https://codeforces.com/gym/103446/problem/H">a problem</a> about Kruskal Reconstruction Tree in which I have never learnt before, so I decided to write a note about it.</p>
+<p>To understand Kruskal Reconstruction Tree, you should first understand the Kruskal algorithm for minimum spanning trees.</p>
+<h2 id="what-is-kruskal-reconstruction-tree">What is Kruskal Reconstruction Tree?</h2>
+<p>In Kruskal algorithm, we do a greedy algorithm for constructing a minimum spanning tree. We sort the edges by their weights and add the edges one by one, if the edge does not form a cycle with the edges we have added before.</p>
+<div class="td-max-width-on-larger-screens details admonition note">
+    <div class="details-summary admonition-title">
+        <i class='icon fas fa-pencil-alt fa-fw'></i>
+        
+            Note
+        
+    </div>
+    <div class="details-content">
+        <div class="admonition-content">
+            <p>Observe that the minimum spanning tree gives the edges that form the paths with the smallest bottleneck weight between any two vertices.</p>
+</div>
+    </div>
+</div>
+
+<p>Moreover, in the Kruskal algorithm, we can maintain</p>
+<h2 id="how-to-build-a-kruskal-reconstruction-tree">How to build a Kruskal Reconstruction Tree?</h2>
+<p>In building the Kruskal Reconstruction Tree, we follows the same idea. However, each time we add an edge \((u, v)\), we also add a vertex with the root of the union-find set of \(u\) and \(v\).</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://oi-wiki.org/graph/mst/#kruskal-%E9%87%8D%E6%9E%84%E6%A0%91">OI Wiki - 最小生成树/Kruskal 重构树</a> (in Chinese)</li>
+</ul>
+      
+      
+    </div>
+  </article>
+</main>
+
+  </main>
+  <footer>
+    <hr class="overlay">
+<div class="overlay">
+  <div class="soc-list"><a class="soc" href="https://github.com/potpot1029" rel="me" title="GitHub"><i class="icon" data-feather="github"></i><span class="text">GitHub</span></a> 
+      |<a class="soc" href="https://www.linkedin.com/in/kin-yi-chau-6a9037228/" rel="me" title="Linkedin"><i class="icon" data-feather="linkedin"></i><span class="text">Linkedin</span></a> 
+      |<a class="soc" href="https://twitter.com/potpot1029_" rel="me" title="Twitter"><i class="icon" data-feather="twitter"></i><span class="text">Twitter</span></a> 
+      |<a class="soc" href="https://www.instagram.com/potpot1029/" rel="me" title="Instagram"><i class="icon" data-feather="instagram"></i><span class="text">Instagram</span></a> 
+      |</div>
+  <div class="footer-info">
+     2024  ©  <a
+      href="https://github.com/potpot1029">potpot1029</a> | Built with <a href="https://gohugo.io">Hugo</a>
+  </div>
+</div><script>
+  feather.replace()
+</script>
+  </footer>
+  <script src="/js/feather.min.js"></script>
+  <script>
+    feather.replace()
+  </script>
+</body>
+</html>
