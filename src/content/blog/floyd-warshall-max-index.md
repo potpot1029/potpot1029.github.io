@@ -1,10 +1,10 @@
 ---
 author: Joey Chau
 pubDatetime: 2025-01-21T14:20:01.000+08:00
-modDatetime: 
+modDatetime:
 title: Tricks about Maximum Index in Paths and Optimization for Floyd Warshall Algorithm
 featured: false
-draft: false 
+draft: false
 tags:
   - "shortest path"
   - "bitset"
@@ -18,6 +18,7 @@ description: A note about a trick of Floyd Warshall algorithm for problems about
 [Floyd-Warshall algorithm](https://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm) is a simple dynamic programming for finding shortest paths between all pairs of vertices in a graph.
 
 The essence of the algorithm is to calculate the minimum distance between two nodes $s$ and $t$ by trying all possible intermediate nodes $k$, which is shown in the following nested-loop (other implementation details are ommited here):
+
 ```cpp
 for (int k = 1; k <= n; k++) {
     for (int i = 1; i <= n; i++) {
@@ -45,6 +46,7 @@ $$
 > For implementation, we don't need a 3D array to store the intermediate distances. Instead we use two 2D arrays to store the distances in the current and next iteration.
 
 Finally, the solution code in C++ is:
+
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
@@ -109,6 +111,7 @@ for (int k = 1; k <= n; k++) {
 ```
 
 The complete code is as follows:
+
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
@@ -140,7 +143,7 @@ void solve() {
 			if (travel[j][i]) travel[j] |= travel[i];
 		}
 		for (int j = 0; j < q; j++) {
-			if (ans[j] == -1 && travel[queries[j].first][queries[j].second]) 
+			if (ans[j] == -1 && travel[queries[j].first][queries[j].second])
 				ans[j] = i;
 		}
 	}
@@ -162,4 +165,3 @@ int main() {
 ```
 
 ## [Conclusion]: A trick for maximum index in paths
-

@@ -115,29 +115,29 @@
     font-weight: var(--shiki-dark-font-weight) !important;
     text-decoration: var(--shiki-dark-text-decoration) !important;
   }
-  h1::before { 
+  h1::before {
     @apply text-sm text-skin-card-muted;
-    content: 'H1 '; 
+    content: "H1 ";
   }
-  h2::before { 
+  h2::before {
     @apply text-sm text-skin-card-muted;
-    content: 'H2 '; 
+    content: "H2 ";
   }
-  h3::before { 
+  h3::before {
     @apply text-sm text-skin-card-muted;
-    content: 'H3 '; 
+    content: "H3 ";
   }
-  h4::before { 
+  h4::before {
     @apply text-sm text-skin-card-muted;
-    content: 'H4 '; 
+    content: "H4 ";
   }
-  h5::before { 
+  h5::before {
     @apply text-sm text-skin-card-muted;
-    content: 'H5 '; 
+    content: "H5 ";
   }
-  h6::before { 
+  h6::before {
     @apply text-sm text-skin-card-muted;
-    content: 'H6 '; 
+    content: "H6 ";
   }
 }
 
