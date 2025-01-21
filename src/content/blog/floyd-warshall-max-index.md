@@ -163,5 +163,3 @@ int main() {
 	return 0;
 }
 ```
-
-## [Conclusion]: A trick for maximum index in paths

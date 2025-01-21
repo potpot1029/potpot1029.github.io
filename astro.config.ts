@@ -7,6 +7,7 @@ import sitemap from "@astrojs/sitemap";
 import { SITE } from "./src/config";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
+import rehypeExternalLinks from "rehype-external-links";
 
 // https://astro.build/config
 export default defineConfig({
@@ -36,7 +37,15 @@ export default defineConfig({
       themes: { light: "nord", dark: "nord" },
       wrap: true,
     },
-    rehypePlugins: [rehypeKatex],
+    rehypePlugins: [
+        rehypeKatex,
+        [
+          rehypeExternalLinks,
+          {
+            content: { type: 'text', value: ' 🔗' }
+          }
+        ],
+    ]
   },
   vite: {
     optimizeDeps: {
