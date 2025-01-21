@@ -32,7 +32,7 @@ const { Content } = await post.render();
 
 const ogImageUrl = typeof ogImage === "string" ? ogImage : ogImage?.src;
 const ogUrl = new URL(
-  ogImageUrl ?? `/posts/${slugifyStr(title)}.png`,
+  ogImageUrl ?? `/notes/${slugifyStr(title)}.png`,
   Astro.url.origin
 ).href;
 
@@ -77,7 +77,9 @@ const nextPost =
     </button>
   </div>
   <main id="main-content">
-    <h1 transition:name={slugifyStr(title)} class="post-title inline-block">{title}</h1>
+    <h1 transition:name={slugifyStr(title)} class="post-title inline-block">
+      {title}
+    </h1>
     <Datetime
       pubDatetime={pubDatetime}
       modDatetime={modDatetime}
@@ -86,13 +88,14 @@ const nextPost =
       editPost={editPost}
       postId={post.id}
     />
-    <article id="article" class="prose mx-auto mt-8 max-w-3xl">
-      <Content />
-    </article>
 
     <ul class="my-8">
       {tags.map(tag => <Tag tag={slugifyStr(tag)} />)}
     </ul>
+
+    <article id="article" class="prose mx-auto mt-8 max-w-3xl">
+      <Content />
+    </article>
 
     <div
       class="flex flex-col-reverse items-center justify-between gap-6 sm:flex-row-reverse sm:items-end sm:gap-4"
@@ -108,8 +111,6 @@ const nextPost =
         </svg>
         <span>Back to Top</span>
       </button>
-
-      <ShareLinks />
     </div>
 
     <hr class="my-6 border-dashed" />
@@ -119,7 +120,7 @@ const nextPost =
       {
         prevPost && (
           <a
-            href={`/posts/${prevPost.slug}`}
+            href={`/notes/${prevPost.slug}`}
             class="flex w-full gap-1 hover:opacity-75"
           >
             <svg
@@ -149,7 +150,7 @@ const nextPost =
       {
         nextPost && (
           <a
-            href={`/posts/${nextPost.slug}`}
+            href={`/notes/${nextPost.slug}`}
             class="flex w-full justify-end gap-1 text-right hover:opacity-75 sm:col-start-2"
           >
             <div>
@@ -186,7 +187,7 @@ const nextPost =
     @apply mx-auto w-full max-w-3xl px-4 pb-12;
   }
   .post-title {
-    @apply text-2xl font-semibold text-skin-accent;
+    @apply text-2xl font-semibold;
   }
 </style>
 

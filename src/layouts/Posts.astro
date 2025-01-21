@@ -16,13 +16,13 @@ export interface Props {
 const { page } = Astro.props;
 ---
 
-<Layout title={`Posts | ${SITE.title}`}>
-  <Header activeNav="posts" />
-  <Main pageTitle="Posts" pageDesc="All the articles I've posted.">
+<Layout title={`Notes | ${SITE.title}`}>
+  <Header activeNav="notes" />
+  <Main pageTitle="Notes" pageDesc="All the articles I've posted.">
     <ul>
       {
         page.data.map(({ data, slug }) => (
-          <Card href={`/posts/${slug}/`} frontmatter={data} />
+          <Card href={`/notes/${slug}/`} frontmatter={data} />
         ))
       }
     </ul>

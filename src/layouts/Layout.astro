@@ -63,6 +63,11 @@ const structuredData = {
     <link rel="canonical" href={canonicalURL} />
     <meta name="generator" content={Astro.generator} />
 
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+    />
+
     <!-- General Meta Tags -->
     <title>{title}</title>
     <meta name="title" content={title} />
@@ -136,7 +141,6 @@ const structuredData = {
 
     <script is:inline src="/toggle-theme.js" async></script>
   </head>
-  <body>
     <slot />
   </body>
 </html>
